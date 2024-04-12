@@ -1,42 +1,31 @@
-import React, { Children } from "react";
-import {useState} from 'react'
+import React from "react";
+import { useState, useRef } from "react";
 import "./Root.css";
 
-import HomePage from "../components/HomePage/HomePage";
-import LoginPage from "../components/LoginPage/LoginPage";
+import HomePage from "../components/homePage/HomePage";
+import LoginPage from "../components/loginPage/LoginPage";
 
 export default function Root() {
   const [validUser, setValidUser] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  let users = {
-    anvar: { email: "anv.sult@gmail.com", pwd: "password" },
-    john: { email: "john@gmail.com", pwd: "123" },
-  };
+  const users = {
+    "anv.sult@gmail.com": {username: "anvar", password: "password"},
+    "john@gmail.com": {username: "john", password: "123"}
+  }
 
   function validateUser() {
-    for (const user in users) {
-      if (users[user].email === email && users[user].pwd === password) {
-        setValidUser(true);
-        break;
-      }
-    }
+    if (users[email].password === password){
+      setValidUser(true);
+    } else {
+      alert("Invalid credentials")
+    };
   }
 
-  if (!validUser) {
-    return (
-      <LoginPage
-        prpEmail={email}
+  return (validUser ? <HomePage /> : <LoginPage
         prpSetEmail={setEmail}
-        prpPassword={password}
         prpSetPassword={setPassword}
-        prpValidate={validateUser} 
-      />
-    );
-  } else {
-    return (
-      <HomePage/>
-    );
-  }
+        prpValidate={validateUser}
+      />);
 }

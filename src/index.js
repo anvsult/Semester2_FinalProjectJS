@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 import ErrorPage from './error-page'
 
 import Root from './routes/Root';
-import LoginPage from './components/LoginPage/LoginPage'
+// import LoginPage from './components/loginPage/LoginPage'
 import './index.css';
 
 import {

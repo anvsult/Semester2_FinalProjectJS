@@ -1,12 +1,11 @@
 import './LoginPage.css';
-import {useState} from 'react';
-import logo from '../../assets/logo.jpg'
+import Logo from '../../assets/logo.jpg'
 
-export default function LoginPage({prpEmail, prpSetEmail, prpPassword, prpSetPassword, prpValidate}){
+export default function LoginPage({prpSetEmail, prpSetPassword, prpValidate}){
 
     return(
         <div id="wrapper">
-        <img src={logo} alt="Logo" />
+        <img src={Logo} alt="Logo" />
 
         <h1>Log in</h1>    
         <input type="text" name="name" placeholder="Enter your email" onChange={e => prpSetEmail(e.target.value)}/>
