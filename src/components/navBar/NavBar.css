@@ -1,0 +1,22 @@
+.navbar {
+    background-color: #ffffff; /* Dark background */
+    color: white;
+    padding: 10px;
+    color: white;
+}
+
+.navbar ul {
+    list-style: none; 
+    margin: 0;
+    padding: 0;
+}
+
+.navbar li {
+    display: inline-block; /* Make links display next to each other */
+    margin-right: 20px;
+    
+}
+
+.navbar {
+    padding: 20px;
+}
