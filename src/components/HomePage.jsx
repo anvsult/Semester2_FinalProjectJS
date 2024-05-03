@@ -1,15 +1,15 @@
 import React from "react";
-import NavBar from "../navBar/NavBar";
-import logo from "../../assets/pylearnLogo.png";
+import logo from "../assets/pylearnLogo.png";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 export default function Home() {
 
   return (
-    <div className="home-page">
-      <NavBar />
+    <div className="homePage">
+      
       <header>
         <img src={logo} alt="Website Logo" className="logo" />
-        <h1>Welcome to My Website!</h1>
+        <p className="h1 m">Welcome to My Website!</p>
       </header>
 
       <main>

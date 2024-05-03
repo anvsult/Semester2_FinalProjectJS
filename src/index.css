@@ -2,19 +2,64 @@ body{
     margin: 0;
 }
 
-.home_page {
-    font-size: 2.5rem;
-}
-
-.loginPage {
-    background-color: red;
-}
-
-img {
+.logo {
     max-width: 100px;
     margin-bottom: 20px;
     display: block;
     margin-left: auto;
     margin-right: auto;
-    border-radius: 50%;
+
 }
+/* HOME PAGE */
+.homePage {
+    margin: 0 auto 0 auto;
+    max-width: 60%;
+}
+
+.homePage h1 {
+    margin-left: auto;
+}
+
+/* LOGIN PAGE */
+
+.loginPage {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 25vh;
+    background-color: #f4f4f4;
+    background-color: white;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); 
+    width: 20rem;
+    /* height: 20rem; */
+}
+
+
+.loginPage h1 {
+    color: #333; 
+}
+
+.loginPage input[type="text"], input[type="password"]{
+    width: 90%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.loginPage button {
+    background-color: #3db6db; /* Example button color */
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+
+
