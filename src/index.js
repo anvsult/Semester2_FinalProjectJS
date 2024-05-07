@@ -3,7 +3,9 @@ import ReactDOM from 'react-dom/client';
 import ErrorPage from './error-page'
 
 import Root from './components/Root';
-import LoginPage from './components/LoginPage'
+import PagePythonFunctions from './components/PagePythonFunctions'
+import PagePythonLoops from './components/PagePythonLoops'
+import PagePythonDataTypes from './components/PagePythonDataTypes'
 import './index.css';
 
 import {

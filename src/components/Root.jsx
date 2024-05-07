@@ -9,6 +9,8 @@ export default function Root() {
   const [validUser, setValidUser] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [validCred, setValidCred] = useState(true);
+  const [page, setPage] = useState("");
 
   const users = {
     "anv.sult@gmail.com": ["Anvar", "password"],
@@ -16,20 +18,22 @@ export default function Root() {
   };
 
   function validateUser() {
-    if (users[email][1] === password) {
+    if (email === "") {
+      setValidCred(false);
+    } else if (users[email][1] === password) {
       setValidUser(true);
       sessionStorage.setItem("userName", users[email][0]);
       sessionStorage.setItem("loggedIn", true);
     } else {
-      alert("Invalid credentials");
+      setValidCred(false);
     }
   }
 
   if (validUser || sessionStorage.getItem("loggedIn") === "true") {
     return (
       <>
-        <NavBar setValid={setValidUser}></NavBar>
-        <HomePage className="homePage" />
+        <NavBar></NavBar>
+        <HomePage page={page} />
       </>
     );
   } else {
@@ -39,6 +43,7 @@ export default function Root() {
           prpSetEmail={setEmail}
           prpSetPassword={setPassword}
           prpValidate={validateUser}
+          prpInvalidMessage={validCred ? " " : "Invalid credentials"}
         />
       </>
     );

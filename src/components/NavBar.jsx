@@ -7,34 +7,43 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import UserIcon from '../assets/user-regular.svg';
+import Logo from '../assets/pylearnLogo.png';
 
-export default function BootsrapNavbar() {
+export default function BootsrapNavbar({setPage}) {
+
   function handleLogOut() {
     sessionStorage.setItem("loggedIn", false);
+    window.location.reload();
+  }
+
+  function handlePageChange(page){
+    sessionStorage.setItem('page', page);
     window.location.reload();
   }
 
   return (
     <Navbar expand="lg" className="bg-body-tertiary ">
       <Container>
-        <Navbar.Brand href="#home">PyLearn</Navbar.Brand>
+        <Navbar.Brand href="/">
+          <img
+            src={Logo}
+            alt="PyLearn Logo"
+            width="60"
+            height="60"
+            className="d-inline-block align-top"
+
+            style={{ padding: '0' }}
+          />
+          
+        </Navbar.Brand>
+        <Navbar.Brand href="/">PyLearn</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto" style={{ maxHeight: '100px' }}>
-            <NavDropdown title="Functions" id="basic-nav-dropdown">
-              <NavDropdown.Item href="#action/3.1">How to define a function</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">How to call a function</NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="#action/3.3">Overview</NavDropdown.Item>
-            </NavDropdown>
-            <NavDropdown title="Loops" id="basic-nav-dropdown">
-              <NavDropdown.Item href="#action/3.1">For loop</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">While loop</NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="#action/3.3">Overview</NavDropdown.Item>
-            </NavDropdown>
+            <Nav.Link onClick={() => handlePageChange("functions")}>Python functions</Nav.Link>
+            <Nav.Link onClick={() => handlePageChange("loops")}>For loop</Nav.Link>
+            <Nav.Link onClick={() => handlePageChange("datatypes")}>Data Types</Nav.Link>
 
-            <Nav.Link href="#contact">Contact</Nav.Link>
           </Nav>
             <Navbar.Brand className="d-flex flex-column ">
             <img 
