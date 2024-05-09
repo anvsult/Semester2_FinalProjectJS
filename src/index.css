@@ -15,6 +15,11 @@ body{
     margin: 0 auto 0 auto;
     max-width: 60%;
 }
+@media only screen and (max-width: 500px) {
+    .homePage {
+        max-width: 95%;
+    }
+}
 
 .homePage h1 {
     margin-left: auto;
@@ -106,4 +111,125 @@ body{
     font-size: 1rem;
     color: #1050b0;
     font-weight: bold;
+}
+
+
+/* QUIZ */
+
+.quiz {
+    background: white;
+    color: #003566;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    border-radius: 10px;
+    padding: 40px 50px;
+}
+
+.quiz hr {
+    height: 2px;
+    border: none;
+    background: #707070;
+
+}
+
+.quiz h1 {
+    margin: auto;
+}
+
+.quiz h2 {
+    font-size: 27px;
+    font-weight: 500;
+}
+
+.quiz ul li {
+    display: flex;
+    align-items: center;
+    height: 70px;
+    padding-left: 15px;
+    border: 1px solid #686868;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.quiz ul li:hover{
+    font-size: 30px;
+}
+
+.quiz button {
+    margin: auto;
+    width: 250px;
+    height: 65px;
+    background: #FFD60A;
+    color: #003566;
+    font-size: 25px;
+    font-weight: 500px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.quiz .index {
+    margin: auto;
+    font-size: 18px;
+}
+
+.quiz .correct {
+    background: #dffff2;
+    border-color: #00d397;
+}
+
+.quiz .wrong {
+    background: #FFEBEB;
+    border-color: #fb2424;
+}
+
+
+/* QUESTIONS */
+
+.questions {
+    color: #003566;
+    /* max-width: 600px; */
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f5f6ff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: 'Arial', sans-serif;
+}
+
+.questions p {
+    color: #003566;
+    ;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+
+.questions input[type="text"] {
+    height: 1.5rem;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    display:inline;
+}
+
+.questions input[type="text"]:focus {
+    border-color: #0056b3;
+    outline: none;
+}
+
+.questions .correct {
+    
+    background-color: #6be892;
+}
+
+.questions .wrong {
+
+    background-color: #e15555;
+}
+
+.questions h3 {
+    font-weight: bold;
+    color: #1050b0;
 }

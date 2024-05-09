@@ -1,22 +1,23 @@
 import React from "react";
 import logo from "../assets/pylearnLogo.png";
-import 'bootstrap/dist/css/bootstrap.min.css';
-import NavBar from './NavBar';
+// import 'bootstrap/dist/css/bootstrap.min.css';
 import PagePythonDataTypes from './PagePythonDataTypes';
 import PagePythonFunctions from './PagePythonFunctions';
 import PagePythonLoops from './PagePythonLoops';
+import Quiz from './Quiz'
 
 export default function Home() {
+  
+  const developers = ["Ilian Eliakim Adeleke", "Anvar Sultanov", "Isaac Nachate"];
 
   function getPage(){
-    if (sessionStorage.getItem("page") === "functions") {
-      return <PagePythonFunctions />
-    } else if (sessionStorage.getItem("page") === "loops") {
-      return <PagePythonLoops />
-    } else if (sessionStorage.getItem("page") === "datatypes") {
-      return <PagePythonDataTypes />
-    } else {
-      return (
+
+    switch (sessionStorage.getItem('page')){
+      case 'functions': return <PagePythonFunctions />;
+      case 'loops': return <PagePythonLoops />;
+      case 'datatypes': return <PagePythonDataTypes />;
+      case 'quiz': return <Quiz />;
+      default: return (
         <div className="documentationPage">
         <h1>Welcome to PyLearn</h1>
         <p>
@@ -25,10 +26,17 @@ export default function Home() {
           from scratch. Whether you are a beginner or an experienced programmer,
           PyLearn has something for everyone.
         </p>
+        <h2>PyLearn is made by</h2>
+        <ul>
+          {developers.map((developer) => (
+            <li key={developer}>{developer}</li>
+          ))}
+        </ul>
         </div>
       )
     }
   }
+
   
   return (
     <>

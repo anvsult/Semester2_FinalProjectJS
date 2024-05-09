@@ -1,8 +1,10 @@
 import { useState } from "react";
 import NavBar from "./NavBar";
+import Questions from './Questions/QuestionD'
 
 export default function dataTypes() {
   return (
+    <>
     <div class="documentationPage">
       <div class="data">
         <h1>Data Types in Python</h1>
@@ -69,5 +71,7 @@ export default function dataTypes() {
         </p>
       </div>
     </div>
+    <Questions />
+    </>
   );
 }

@@ -1,8 +1,10 @@
 import { useState } from "react";
 import NavBar from "./NavBar";
+import Questions from './Questions/QuestionL'
 
 export default function Functions() {
   return (
+    <>
     <div class="documentationPage">
       <div class="data">
         <h1>Loops in Python</h1>
@@ -90,5 +92,7 @@ export default function Functions() {
         </p>
       </div>
     </div>
+    <Questions />
+    </>
   );
 }
